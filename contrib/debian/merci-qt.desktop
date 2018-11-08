@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Bitcoin Core
+Comment=Connect to the Merci P2P Network
+Exec=merci-qt %u
+Terminal=false
+Type=Application
+Icon=merci128
+MimeType=x-scheme-handler/merci;
+Categories=Office;Finance;
+StartupWMClass=Merci-qt
+Name[en_US]=merci-qt

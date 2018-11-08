@@ -1,0 +1,6 @@
+usr/local/bin/merci-qt usr/bin
+share/pixmaps/merci32.xpm usr/share/pixmaps
+share/pixmaps/merci16.xpm usr/share/pixmaps
+share/pixmaps/merci128.png usr/share/pixmaps
+debian/merci-qt.desktop usr/share/applications
+debian/merci-qt.protocol usr/share/kde4/services/
