@@ -1,0 +1,7 @@
+[submodule "contrib/gitian-builder"]
+        path = contrib/gitian-builder
+        url = git://github.com/devrandom/gitian-builder.git
+
+[submodule "contrib/gitian.sigs"]
+        path = contrib/gitian.sigs
+        url = git://github.com/merciproject/gitian.sigs.git
