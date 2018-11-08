@@ -621,7 +621,7 @@ fs::path GetDefaultDataDir()
     // Unix: ~/.merci
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Merciv2";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Merci";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -631,10 +631,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Merciv2";
+    return pathRet / "Library/Application Support/Merci";
 #else
     // Unix
-    return pathRet / ".merciv2";
+    return pathRet / ".merci";
 #endif
 #endif
 }

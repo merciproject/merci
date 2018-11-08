@@ -165,8 +165,8 @@ public:
     {
         painter->save();
 
-        QString tokenSymbol = index.data(TokenItemModel::SymbolRole).toString();
-        QString tokenBalance = index.data(TokenItemModel::BalanceRole).toString();
+//        QString tokenSymbol = index.data(TokenItemModel::SymbolRole).toString();
+//        QString tokenBalance = index.data(TokenItemModel::BalanceRole).toString();
 
         QRect mainRect = option.rect;
         mainRect.setWidth(option.rect.width());
@@ -182,14 +182,14 @@ public:
         QFont font = option.font;
 
         QFontMetrics fmName(font);
-        QString clippedSymbol = fmName.elidedText(tokenSymbol, Qt::ElideRight, SYMBOL_WIDTH);
+//        QString clippedSymbol = fmName.elidedText(tokenSymbol, Qt::ElideRight, SYMBOL_WIDTH);
 
         QRect symbolRect(mainRect.left() + MARGIN, mainRect.top(), SYMBOL_WIDTH, mainRect.height());
-        painter->drawText(symbolRect, Qt::AlignLeft|Qt::AlignVCenter, clippedSymbol);
+//        painter->drawText(symbolRect, Qt::AlignLeft|Qt::AlignVCenter, clippedSymbol);
 
         int balanceWidth = mainRect.width() - symbolRect.width() - 3 * MARGIN;
         QRect balanceRect(symbolRect.right() + MARGIN, symbolRect.top(), balanceWidth, mainRect.height());
-        painter->drawText(balanceRect, Qt::AlignRight|Qt::AlignVCenter, tokenBalance);
+//        painter->drawText(balanceRect, Qt::AlignRight|Qt::AlignVCenter, tokenBalance);
 
         painter->restore();
     }
@@ -230,20 +230,20 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
 
     // Set stylesheet
     SetObjectStyleSheet(ui->labelWalletStatus, StyleSheetNames::ButtonTransparent);
-    SetObjectStyleSheet(ui->labelTokenStatus, StyleSheetNames::ButtonTransparent);
+//    SetObjectStyleSheet(ui->labelTokenStatus, StyleSheetNames::ButtonTransparent);
     SetObjectStyleSheet(ui->labelTransactionsStatus, StyleSheetNames::ButtonTransparent);
 
     if (!platformStyle->getImagesOnButtons()) {
-        ui->buttonAddToken->setIcon(QIcon());
+//        ui->buttonAddToken->setIcon(QIcon());
     } else {
-        ui->buttonAddToken->setIcon(platformStyle->MultiStatesIcon(":/icons/add", PlatformStyle::PushButton));
+//        ui->buttonAddToken->setIcon(platformStyle->MultiStatesIcon(":/icons/add", PlatformStyle::PushButton));
     }
 
     // use a MultiStatesIcon for the "out of sync warning" icon
     QIcon icon = platformStyle->MultiStatesIcon(":/icons/warning", PlatformStyle::PushButton);
     ui->labelTransactionsStatus->setIcon(icon);
     ui->labelWalletStatus->setIcon(icon);
-    ui->labelTokenStatus->setIcon(icon);
+//    ui->labelTokenStatus->setIcon(icon);
 
     QFont font = ui->labelTotal->font();
     font.setPointSizeF(font.pointSizeF() * 1.5);
@@ -268,13 +268,13 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     connect(ui->listTransactions, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(showDetails()));
 
     // Token list
-    ui->listTokens->setItemDelegate(tkndelegate);
-    ui->listTokens->setAttribute(Qt::WA_MacShowFocusRect, false);
+//    ui->listTokens->setItemDelegate(tkndelegate);
+//    ui->listTokens->setAttribute(Qt::WA_MacShowFocusRect, false);
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
     connect(ui->labelWalletStatus, SIGNAL(clicked()), this, SLOT(handleOutOfSyncWarningClicks()));
-    connect(ui->labelTokenStatus, SIGNAL(clicked()), this, SLOT(handleOutOfSyncWarningClicks()));
-    connect(ui->labelTransactionsStatus, SIGNAL(clicked()), this, SLOT(handleOutOfSyncWarningClicks()));
+//    connect(ui->labelTokenStatus, SIGNAL(clicked()), this, SLOT(handleOutOfSyncWarningClicks()));
+//    connect(ui->labelTransactionsStatus, SIGNAL(clicked()), this, SLOT(handleOutOfSyncWarningClicks()));
 }
 
 void OverviewPage::handleOutOfSyncWarningClicks()
@@ -325,24 +325,24 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelWatchStake->setVisible(showWatchOnlyStake); // show watch-only stake balance
 }
 
-void OverviewPage::checkForInvalidTokens()
-{
-    if(walletModel)
-    {
-        std::vector<CTokenInfo> invalidTokens = walletModel->getInvalidTokens();
-        if(invalidTokens.size() > 0)
-        {
-            QString message;
-            for(CTokenInfo& tokenInfo : invalidTokens)
-            {
-                QString symbol = QString::fromStdString(tokenInfo.strTokenSymbol);
-                QString address = QString::fromStdString(tokenInfo.strSenderAddress);
-                message += tr("The %1 address \"%2\" is not yours, please change it to new one.\n").arg(symbol, address);
-            }
-            QMessageBox::warning(this, tr("Invalid token address"), message);
-        }
-    }
-}
+//void OverviewPage::checkForInvalidTokens()
+//{
+//    if(walletModel)
+//    {
+//        std::vector<CTokenInfo> invalidTokens = walletModel->getInvalidTokens();
+//        if(invalidTokens.size() > 0)
+//        {
+//            QString message;
+//            for(CTokenInfo& tokenInfo : invalidTokens)
+//            {
+//                QString symbol = QString::fromStdString(tokenInfo.strTokenSymbol);
+//                QString address = QString::fromStdString(tokenInfo.strSenderAddress);
+//                message += tr("The %1 address \"%2\" is not yours, please change it to new one.\n").arg(symbol, address);
+//            }
+//            QMessageBox::warning(this, tr("Invalid token address"), message);
+//        }
+//    }
+//}
 
 // show/hide watch-only labels
 void OverviewPage::updateWatchOnlyLabels(bool showWatchOnly)
@@ -399,23 +399,23 @@ void OverviewPage::setWalletModel(WalletModel *model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    if(model && model->getTokenItemModel())
-    {
-        // Sort tokens by name
-        QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(this);
-        TokenItemModel* tokenModel = model->getTokenItemModel();
-        proxyModel->setSourceModel(tokenModel);
-        proxyModel->sort(0, Qt::AscendingOrder);
-
-        // Set tokens model
-        ui->listTokens->setModel(proxyModel);
-    }
+//    if(model && model->getTokenItemModel())
+//    {
+//        // Sort tokens by name
+//        QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(this);
+//        TokenItemModel* tokenModel = model->getTokenItemModel();
+//        proxyModel->setSourceModel(tokenModel);
+//        proxyModel->sort(0, Qt::AscendingOrder);
+//
+//        // Set tokens model
+//        ui->listTokens->setModel(proxyModel);
+//    }
 
     // update the display unit, to not use the default ("BTC")
     updateDisplayUnit();
 
     // check for presence of invalid tokens
-    QTimer::singleShot(500, this, SLOT(checkForInvalidTokens()));
+//    QTimer::singleShot(500, this, SLOT(checkForInvalidTokens()));
 }
 
 void OverviewPage::updateDisplayUnit()
@@ -442,13 +442,13 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
 {
     ui->labelWalletStatus->setVisible(fShow);
     ui->labelTransactionsStatus->setVisible(fShow);
-    ui->labelTokenStatus->setVisible(fShow);
+//    ui->labelTokenStatus->setVisible(fShow);
 }
-
-void OverviewPage::on_buttonAddToken_clicked()
-{
-    Q_EMIT addTokenClicked();
-}
+//
+//void OverviewPage::on_buttonAddToken_clicked()
+//{
+//    Q_EMIT addTokenClicked();
+//}
 
 void OverviewPage::on_showMoreButton_clicked()
 {
