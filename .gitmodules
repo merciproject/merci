@@ -1,11 +1,3 @@
-[submodule "contrib/gitian-builder"]
-        path = contrib/gitian-builder
-        url = git://github.com/devrandom/gitian-builder.git
-
-[submodule "contrib/gitian.sigs"]
-        path = contrib/gitian.sigs
-	url = git://github.com/merciproject/gitian.sigs.git
-
 [submodule "src/cpp-ethereum"]
         path = src/cpp-ethereum
         url = https://github.com/merciproject/cpp-eth-merci.git
