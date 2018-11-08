@@ -4,4 +4,8 @@
 
 [submodule "contrib/gitian.sigs"]
         path = contrib/gitian.sigs
-        url = git://github.com/merciproject/gitian.sigs.git
+	url = git://github.com/merciproject/gitian.sigs.git
+
+[submodule "src/cpp-ethereum"]
+        path = src/cpp-ethereum
+        url = https://github.com/merciproject/cpp-eth-merci.git
