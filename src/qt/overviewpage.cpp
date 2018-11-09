@@ -64,7 +64,7 @@ public:
         QString typeString = ind.data(Qt::DisplayRole).toString();
 
         QRect mainRect = option.rect;
-        QColor txColor = index.row() % 2 ? QColor("#393939") : QColor("#2e2e2e");
+        QColor txColor = index.row() % 2 ? QColor("#dedede") : QColor("#dedede");
         painter->fillRect(mainRect, txColor);
 
         QPen pen;
