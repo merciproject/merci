@@ -171,10 +171,10 @@ public:
         QRect mainRect = option.rect;
         mainRect.setWidth(option.rect.width());
 
-        painter->fillRect(mainRect, QColor("#383938"));
+        painter->fillRect(mainRect, QColor("#dedede"));
 
         QRect hLineRect(mainRect.left(), mainRect.bottom(), mainRect.width(), 1);
-        painter->fillRect(hLineRect, QColor("#2e2e2e"));
+        painter->fillRect(hLineRect, QColor("#dedede"));
 
         QColor foreground("#dedede");
         painter->setPen(foreground);
