@@ -3,14 +3,7 @@ What is Merci?
 
 Merci is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Merci's Bitcoin-like UTXO blockchain. For more general information about Merci as well as links to join our community, go to https://mercibq.com
 
-Welcome to the Merci Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Merci, we highly recommend using either testnet or regtest mode. 
-
-The major features of the Merci network include:
-
-1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Merci. 
-2. A Proof of Stake consensus system which is optimized for Merci's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Merci that have created blocks in the past. 
-3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
-4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Merci. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
+Welcome to the Merci Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Merci, we highly recommend using either testnet or regtest mode. 
 
 Note: Merci Core is considered beta software. We make no warranties or guarantees of its security or stability.
 
@@ -31,9 +24,7 @@ Merci Core is our primary mainnet wallet. It implements a full node and is capab
 Merci Core currently implements the following:
 
 * Sending/Receiving Merci
-* Sending/Receiving QRC20 tokens on the Merci network
 * Staking and creating blocks for the Merci network
-* Creating and interacting with smart contracts
 * Running a full node for distributing the blockchain to other users
 * "Prune" mode, which minimizes disk usage
 * Regtest mode, which enables developers to very quickly build their own private Merci network for Dapp testing
