@@ -125,14 +125,14 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     openRPCConsoleAction(0),
     openAction(0),
     showHelpMessageAction(0),
-//    smartContractAction(0),
-//    createContractAction(0),
-//    sendToContractAction(0),
-//    callContractAction(0),
-//    QRCTokenAction(0),
-//    sendTokenAction(0),
-//    receiveTokenAction(0),
-//    addTokenAction(0),
+    smartContractAction(0),
+    createContractAction(0),
+    sendToContractAction(0),
+    callContractAction(0),
+    MRCTokenAction(0),
+    sendTokenAction(0),
+    receiveTokenAction(0),
+    addTokenAction(0),
     trayIcon(0),
     trayIconMenu(0),
     notificator(0),
@@ -361,16 +361,16 @@ void BitcoinGUI::createActions()
     receiveCoinsMenuAction->setStatusTip(receiveCoinsAction->statusTip());
     receiveCoinsMenuAction->setToolTip(receiveCoinsMenuAction->statusTip());
 
-//    smartContractAction = new QAction(platformStyle->MultiStatesIcon(":/icons/smart_contract"), tr("Smart &Contracts"), this);
-//    smartContractAction->setStatusTip(tr("Smart contracts"));
-//    smartContractAction->setToolTip(smartContractAction->statusTip());
-//    smartContractAction->setCheckable(true);
-//    smartContractAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
-//    tabGroup->addAction(smartContractAction);
-//
-//    createContractAction = new QAction(tr("Create"), this);
-//    sendToContractAction = new QAction(tr("Send To"), this);
-//    callContractAction = new QAction(tr("Call"), this);
+    smartContractAction = new QAction(platformStyle->MultiStatesIcon(":/icons/smart_contract"), tr("Smart &Contracts"), this);
+    smartContractAction->setStatusTip(tr("Smart contracts"));
+    smartContractAction->setToolTip(smartContractAction->statusTip());
+    smartContractAction->setCheckable(true);
+    smartContractAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
+    tabGroup->addAction(smartContractAction);
+
+    createContractAction = new QAction(tr("Create"), this);
+    sendToContractAction = new QAction(tr("Send To"), this);
+    callContractAction = new QAction(tr("Call"), this);
 
     historyAction = new QAction(platformStyle->MultiStatesIcon(":/icons/history"), tr("&Transactions"), this);
     historyAction->setStatusTip(tr("Browse transaction history"));
@@ -379,16 +379,16 @@ void BitcoinGUI::createActions()
     historyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(historyAction);
 
-//    QRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/qrctoken"), tr("&QRC Tokens"), this);
-//    QRCTokenAction->setStatusTip(tr("QRC Tokens (send, receive or add Tokens in list)"));
-//    QRCTokenAction->setToolTip(QRCTokenAction->statusTip());
-//    QRCTokenAction->setCheckable(true);
-//    QRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
-//    tabGroup->addAction(QRCTokenAction);
-//
-//    sendTokenAction = new QAction(tr("Send"), this);
-//    receiveTokenAction = new QAction(tr("Receive"), this);
-//    addTokenAction = new QAction(tr("Add Token"), this);
+    MRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/mrctoken"), tr("&MRC Tokens"), this);
+    MRCTokenAction->setStatusTip(tr("MRC Tokens (send, receive or add Tokens in list)"));
+    MRCTokenAction->setToolTip(MRCTokenAction->statusTip());
+    MRCTokenAction->setCheckable(true);
+    MRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+    tabGroup->addAction(MRCTokenAction);
+
+    sendTokenAction = new QAction(tr("Send"), this);
+    receiveTokenAction = new QAction(tr("Receive"), this);
+    addTokenAction = new QAction(tr("Add Token"), this);
 
 #ifdef ENABLE_WALLET
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
@@ -405,18 +405,18 @@ void BitcoinGUI::createActions()
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
-//    connect(createContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(createContractAction, SIGNAL(triggered()), this, SLOT(gotoCreateContractPage()));
-//    connect(sendToContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(sendToContractAction, SIGNAL(triggered()), this, SLOT(gotoSendToContractPage()));
-//    connect(callContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(callContractAction, SIGNAL(triggered()), this, SLOT(gotoCallContractPage()));
-//    connect(sendTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(sendTokenAction, SIGNAL(triggered()), this, SLOT(gotoSendTokenPage()));
-//    connect(receiveTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(receiveTokenAction, SIGNAL(triggered()), this, SLOT(gotoReceiveTokenPage()));
-//    connect(addTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-//    connect(addTokenAction, SIGNAL(triggered()), this, SLOT(gotoAddTokenPage()));
+    connect(createContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(createContractAction, SIGNAL(triggered()), this, SLOT(gotoCreateContractPage()));
+    connect(sendToContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(sendToContractAction, SIGNAL(triggered()), this, SLOT(gotoSendToContractPage()));
+    connect(callContractAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(callContractAction, SIGNAL(triggered()), this, SLOT(gotoCallContractPage()));
+    connect(sendTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(sendTokenAction, SIGNAL(triggered()), this, SLOT(gotoSendTokenPage()));
+    connect(receiveTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(receiveTokenAction, SIGNAL(triggered()), this, SLOT(gotoReceiveTokenPage()));
+    connect(addTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(addTokenAction, SIGNAL(triggered()), this, SLOT(gotoAddTokenPage()));
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(platformStyle->MenuColorIcon(":/icons/quit"), tr("E&xit"), this);
@@ -565,16 +565,16 @@ void BitcoinGUI::createToolBars()
         appNavigationBar->addAction(sendCoinsAction);
         appNavigationBar->addAction(receiveCoinsAction);
         appNavigationBar->addAction(historyAction);
-//        QList<QAction*> contractActions;
-//        contractActions.append(createContractAction);
-//        contractActions.append(sendToContractAction);
-//        contractActions.append(callContractAction);
-//        appNavigationBar->mapGroup(smartContractAction, contractActions);
-//        QList<QAction*> tokenActions;
-//        tokenActions.append(sendTokenAction);
-//        tokenActions.append(receiveTokenAction);
-//        tokenActions.append(addTokenAction);
-//        appNavigationBar->mapGroup(QRCTokenAction, tokenActions);
+        QList<QAction*> contractActions;
+        contractActions.append(createContractAction);
+        contractActions.append(sendToContractAction);
+        contractActions.append(callContractAction);
+        appNavigationBar->mapGroup(smartContractAction, contractActions);
+        QList<QAction*> tokenActions;
+        tokenActions.append(sendTokenAction);
+        tokenActions.append(receiveTokenAction);
+        tokenActions.append(addTokenAction);
+        appNavigationBar->mapGroup(MRCTokenAction, tokenActions);
         appNavigationBar->buildUi();
         overviewAction->setChecked(true);
     }
@@ -827,21 +827,21 @@ void BitcoinGUI::gotoHistoryPage()
 void BitcoinGUI::gotoSendTokenPage()
 {
     sendTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    MRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendTokenPage();
 }
 
 void BitcoinGUI::gotoReceiveTokenPage()
 {
     receiveTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    MRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoReceiveTokenPage();
 }
 
 void BitcoinGUI::gotoAddTokenPage()
 {
     addTokenAction->setChecked(true);
-    QRCTokenAction->setChecked(true);
+    MRCTokenAction->setChecked(true);
     if (walletFrame) walletFrame->gotoAddTokenPage();
 }
 

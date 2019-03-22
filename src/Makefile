@@ -116,8 +116,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin18.0.0
-host_triplet = x86_64-apple-darwin18.0.0
+build_triplet = x86_64-apple-darwin18.2.0
+host_triplet = x86_64-apple-darwin18.2.0
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 noinst_PROGRAMS = $(am__EXEEXT_7)
@@ -944,7 +944,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/eventlog.cpp qt/execrpccommand.cpp qt/editaddressdialog.cpp \
 	qt/editcontractinfodialog.cpp qt/openuridialog.cpp \
 	qt/overviewpage.cpp qt/paymentrequestplus.cpp \
-	qt/paymentserver.cpp qt/qrctoken.cpp qt/receivecoinsdialog.cpp \
+	qt/paymentserver.cpp qt/mrctoken.cpp qt/receivecoinsdialog.cpp \
 	qt/receiverequestdialog.cpp qt/receivetokenpage.cpp \
 	qt/recentrequeststablemodel.cpp qt/restoredialog.cpp \
 	qt/sendcoinsdialog.cpp qt/sendcoinsentry.cpp \
@@ -976,7 +976,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/notificator.h qt/openuridialog.h qt/optionsdialog.h \
 	qt/optionsmodel.h qt/overviewpage.h qt/paymentrequestplus.h \
 	qt/paymentserver.h qt/peertablemodel.h qt/platformstyle.h \
-	qt/qrctoken.h qt/qvalidatedlineedit.h qt/qvalidatedtextedit.h \
+	qt/mrctoken.h qt/qvalidatedlineedit.h qt/qvalidatedtextedit.h \
 	qt/qvaluecombobox.h qt/receivecoinsdialog.h \
 	qt/receiverequestdialog.h qt/receivetokenpage.h \
 	qt/recentrequeststablemodel.h qt/restoredialog.h \
@@ -1002,7 +1002,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/forms/helpmessagedialog.ui qt/forms/intro.ui \
 	qt/forms/modaloverlay.ui qt/forms/openuridialog.ui \
 	qt/forms/optionsdialog.ui qt/forms/overviewpage.ui \
-	qt/forms/qrctoken.ui qt/forms/receivecoinsdialog.ui \
+	qt/forms/mrctoken.ui qt/forms/receivecoinsdialog.ui \
 	qt/forms/receiverequestdialog.ui qt/forms/receivetokenpage.ui \
 	qt/forms/restoredialog.ui qt/forms/debugwindow.ui \
 	qt/forms/sendcoinsdialog.ui qt/forms/sendcoinsentry.ui \
@@ -1100,7 +1100,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/contract_input.png \
 	qt/res/icons/contract_output.png \
 	qt/res/icons/smart_contract.png qt/res/icons/lock_staking.png \
-	qt/res/icons/qrctoken.png qt/res/icons/add_recipient.png \
+	qt/res/icons/mrctoken.png qt/res/icons/add_recipient.png \
 	qt/res/icons/encrypt.png qt/res/icons/receive_from.png \
 	qt/res/icons/remove_entry.png qt/res/icons/request_payment.png \
 	qt/res/icons/restore.png qt/res/icons/send_to.png \
@@ -1212,7 +1212,7 @@ am__objects_11 =  \
 	qt/libbitcoinqt_a-overviewpage.$(OBJEXT) \
 	qt/libbitcoinqt_a-paymentrequestplus.$(OBJEXT) \
 	qt/libbitcoinqt_a-paymentserver.$(OBJEXT) \
-	qt/libbitcoinqt_a-qrctoken.$(OBJEXT) \
+	qt/libbitcoinqt_a-mrctoken.$(OBJEXT) \
 	qt/libbitcoinqt_a-receivecoinsdialog.$(OBJEXT) \
 	qt/libbitcoinqt_a-receiverequestdialog.$(OBJEXT) \
 	qt/libbitcoinqt_a-receivetokenpage.$(OBJEXT) \
@@ -1288,7 +1288,7 @@ am__objects_14 = qt/libbitcoinqt_a-moc_abifunctionfield.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_overviewpage.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_peertablemodel.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_paymentserver.$(OBJEXT) \
-	qt/libbitcoinqt_a-moc_qrctoken.$(OBJEXT) \
+	qt/libbitcoinqt_a-moc_mrctoken.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_qvalidatedlineedit.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_qvalidatedtextedit.$(OBJEXT) \
 	qt/libbitcoinqt_a-moc_qvaluecombobox.$(OBJEXT) \
@@ -2140,7 +2140,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po \
-	qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po \
+	qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po \
@@ -2190,7 +2190,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po \
-	qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po \
+	qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po \
@@ -2701,14 +2701,14 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/missing aclocal-1.16
+ACLOCAL = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/missing automake-1.16
+AUTOCONF = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing automake-1.16
 AWK = awk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
@@ -2807,7 +2807,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/local/Cellar/qt/5.11.2/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -2898,10 +2898,10 @@ X11XCB_LIBS =
 XGETTEXT = 
 ZMQ_CFLAGS = 
 ZMQ_LIBS = 
-abs_builddir = /Users/jeongwoo/git/merci2/src
-abs_srcdir = /Users/jeongwoo/git/merci2/src
-abs_top_builddir = /Users/jeongwoo/git/merci2
-abs_top_srcdir = /Users/jeongwoo/git/merci2
+abs_builddir = /Users/jeongwoo/git/merci/src
+abs_srcdir = /Users/jeongwoo/git/merci/src
+abs_top_builddir = /Users/jeongwoo/git/merci
+abs_top_srcdir = /Users/jeongwoo/git/merci
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -2914,10 +2914,10 @@ am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
 ax_pthread_config = 
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin18.0.0
+build = x86_64-apple-darwin18.2.0
 build_alias = 
 build_cpu = x86_64
-build_os = darwin18.0.0
+build_os = darwin18.2.0
 build_vendor = apple
 builddir = .
 datadir = ${datarootdir}
@@ -2925,15 +2925,15 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin18.0.0
+host = x86_64-apple-darwin18.2.0
 host_alias = 
 host_cpu = x86_64
-host_os = darwin18.0.0
+host_os = darwin18.2.0
 host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/jeongwoo/git/merci2/build-aux/install-sh
+install_sh = ${SHELL} /Users/jeongwoo/git/merci/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -3933,7 +3933,7 @@ QT_FORMS_UI = \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
   qt/forms/overviewpage.ui \
-  qt/forms/qrctoken.ui \
+  qt/forms/mrctoken.ui \
   qt/forms/receivecoinsdialog.ui \
   qt/forms/receiverequestdialog.ui \
   qt/forms/receivetokenpage.ui \
@@ -3988,7 +3988,7 @@ QT_MOC_CPP = \
   qt/moc_overviewpage.cpp \
   qt/moc_peertablemodel.cpp \
   qt/moc_paymentserver.cpp \
-  qt/moc_qrctoken.cpp \
+  qt/moc_mrctoken.cpp \
   qt/moc_qvalidatedlineedit.cpp \
   qt/moc_qvalidatedtextedit.cpp \
   qt/moc_qvaluecombobox.cpp \
@@ -4093,7 +4093,7 @@ BITCOIN_QT_H = \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
-  qt/qrctoken.h \
+  qt/mrctoken.h \
   qt/qvalidatedlineedit.h \
   qt/qvalidatedtextedit.h \
   qt/qvaluecombobox.h \
@@ -4199,7 +4199,7 @@ RES_ICONS = \
   qt/res/icons/contract_output.png \
   qt/res/icons/smart_contract.png \
   qt/res/icons/lock_staking.png \
-  qt/res/icons/qrctoken.png \
+  qt/res/icons/mrctoken.png \
   qt/res/icons/add_recipient.png \
   qt/res/icons/encrypt.png \
   qt/res/icons/receive_from.png \
@@ -4270,7 +4270,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/overviewpage.cpp \
   qt/paymentrequestplus.cpp \
   qt/paymentserver.cpp \
-  qt/qrctoken.cpp \
+  qt/mrctoken.cpp \
   qt/receivecoinsdialog.cpp \
   qt/receiverequestdialog.cpp \
   qt/receivetokenpage.cpp \
@@ -5499,7 +5499,7 @@ qt/libbitcoinqt_a-paymentrequestplus.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/libbitcoinqt_a-paymentserver.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/libbitcoinqt_a-qrctoken.$(OBJEXT): qt/$(am__dirstamp) \
+qt/libbitcoinqt_a-mrctoken.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/libbitcoinqt_a-receivecoinsdialog.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
@@ -5631,7 +5631,7 @@ qt/libbitcoinqt_a-moc_peertablemodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/libbitcoinqt_a-moc_paymentserver.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/libbitcoinqt_a-moc_qrctoken.$(OBJEXT): qt/$(am__dirstamp) \
+qt/libbitcoinqt_a-moc_mrctoken.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/libbitcoinqt_a-moc_qvalidatedlineedit.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
@@ -6480,7 +6480,7 @@ include qt/$(DEPDIR)/libbitcoinqt_a-moc_optionsmodel.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po # am--include-marker
-include qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po # am--include-marker
+include qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po # am--include-marker
@@ -6530,7 +6530,7 @@ include qt/$(DEPDIR)/libbitcoinqt_a-peertablemodel.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po # am--include-marker
-include qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po # am--include-marker
+include qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po # am--include-marker
@@ -11573,19 +11573,19 @@ qt/libbitcoinqt_a-paymentserver.obj: qt/paymentserver.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-paymentserver.obj `if test -f 'qt/paymentserver.cpp'; then $(CYGPATH_W) 'qt/paymentserver.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/paymentserver.cpp'; fi`
 
-qt/libbitcoinqt_a-qrctoken.o: qt/qrctoken.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-qrctoken.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Tpo -c -o qt/libbitcoinqt_a-qrctoken.o `test -f 'qt/qrctoken.cpp' || echo '$(srcdir)/'`qt/qrctoken.cpp
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po
-#	$(AM_V_CXX)source='qt/qrctoken.cpp' object='qt/libbitcoinqt_a-qrctoken.o' libtool=no \
+qt/libbitcoinqt_a-mrctoken.o: qt/mrctoken.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-mrctoken.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Tpo -c -o qt/libbitcoinqt_a-mrctoken.o `test -f 'qt/mrctoken.cpp' || echo '$(srcdir)/'`qt/mrctoken.cpp
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
+#	$(AM_V_CXX)source='qt/mrctoken.cpp' object='qt/libbitcoinqt_a-mrctoken.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-qrctoken.o `test -f 'qt/qrctoken.cpp' || echo '$(srcdir)/'`qt/qrctoken.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-mrctoken.o `test -f 'qt/mrctoken.cpp' || echo '$(srcdir)/'`qt/mrctoken.cpp
 
-qt/libbitcoinqt_a-qrctoken.obj: qt/qrctoken.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-qrctoken.obj -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Tpo -c -o qt/libbitcoinqt_a-qrctoken.obj `if test -f 'qt/qrctoken.cpp'; then $(CYGPATH_W) 'qt/qrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrctoken.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po
-#	$(AM_V_CXX)source='qt/qrctoken.cpp' object='qt/libbitcoinqt_a-qrctoken.obj' libtool=no \
+qt/libbitcoinqt_a-mrctoken.obj: qt/mrctoken.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-mrctoken.obj -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Tpo -c -o qt/libbitcoinqt_a-mrctoken.obj `if test -f 'qt/mrctoken.cpp'; then $(CYGPATH_W) 'qt/mrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/mrctoken.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
+#	$(AM_V_CXX)source='qt/mrctoken.cpp' object='qt/libbitcoinqt_a-mrctoken.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-qrctoken.obj `if test -f 'qt/qrctoken.cpp'; then $(CYGPATH_W) 'qt/qrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrctoken.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-mrctoken.obj `if test -f 'qt/mrctoken.cpp'; then $(CYGPATH_W) 'qt/mrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/mrctoken.cpp'; fi`
 
 qt/libbitcoinqt_a-receivecoinsdialog.o: qt/receivecoinsdialog.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-receivecoinsdialog.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-receivecoinsdialog.Tpo -c -o qt/libbitcoinqt_a-receivecoinsdialog.o `test -f 'qt/receivecoinsdialog.cpp' || echo '$(srcdir)/'`qt/receivecoinsdialog.cpp
@@ -12497,19 +12497,19 @@ qt/libbitcoinqt_a-moc_paymentserver.obj: qt/moc_paymentserver.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-moc_paymentserver.obj `if test -f 'qt/moc_paymentserver.cpp'; then $(CYGPATH_W) 'qt/moc_paymentserver.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_paymentserver.cpp'; fi`
 
-qt/libbitcoinqt_a-moc_qrctoken.o: qt/moc_qrctoken.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-moc_qrctoken.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Tpo -c -o qt/libbitcoinqt_a-moc_qrctoken.o `test -f 'qt/moc_qrctoken.cpp' || echo '$(srcdir)/'`qt/moc_qrctoken.cpp
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po
-#	$(AM_V_CXX)source='qt/moc_qrctoken.cpp' object='qt/libbitcoinqt_a-moc_qrctoken.o' libtool=no \
+qt/libbitcoinqt_a-moc_mrctoken.o: qt/moc_mrctoken.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-moc_mrctoken.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Tpo -c -o qt/libbitcoinqt_a-moc_mrctoken.o `test -f 'qt/moc_mrctoken.cpp' || echo '$(srcdir)/'`qt/moc_mrctoken.cpp
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
+#	$(AM_V_CXX)source='qt/moc_mrctoken.cpp' object='qt/libbitcoinqt_a-moc_mrctoken.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-moc_qrctoken.o `test -f 'qt/moc_qrctoken.cpp' || echo '$(srcdir)/'`qt/moc_qrctoken.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-moc_mrctoken.o `test -f 'qt/moc_mrctoken.cpp' || echo '$(srcdir)/'`qt/moc_mrctoken.cpp
 
-qt/libbitcoinqt_a-moc_qrctoken.obj: qt/moc_qrctoken.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-moc_qrctoken.obj -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Tpo -c -o qt/libbitcoinqt_a-moc_qrctoken.obj `if test -f 'qt/moc_qrctoken.cpp'; then $(CYGPATH_W) 'qt/moc_qrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_qrctoken.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po
-#	$(AM_V_CXX)source='qt/moc_qrctoken.cpp' object='qt/libbitcoinqt_a-moc_qrctoken.obj' libtool=no \
+qt/libbitcoinqt_a-moc_mrctoken.obj: qt/moc_mrctoken.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-moc_mrctoken.obj -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Tpo -c -o qt/libbitcoinqt_a-moc_mrctoken.obj `if test -f 'qt/moc_mrctoken.cpp'; then $(CYGPATH_W) 'qt/moc_mrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_mrctoken.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Tpo qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
+#	$(AM_V_CXX)source='qt/moc_mrctoken.cpp' object='qt/libbitcoinqt_a-moc_mrctoken.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-moc_qrctoken.obj `if test -f 'qt/moc_qrctoken.cpp'; then $(CYGPATH_W) 'qt/moc_qrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_qrctoken.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/libbitcoinqt_a-moc_mrctoken.obj `if test -f 'qt/moc_mrctoken.cpp'; then $(CYGPATH_W) 'qt/moc_mrctoken.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_mrctoken.cpp'; fi`
 
 qt/libbitcoinqt_a-moc_qvalidatedlineedit.o: qt/moc_qvalidatedlineedit.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/libbitcoinqt_a-moc_qvalidatedlineedit.o -MD -MP -MF qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Tpo -c -o qt/libbitcoinqt_a-moc_qvalidatedlineedit.o `test -f 'qt/moc_qvalidatedlineedit.cpp' || echo '$(srcdir)/'`qt/moc_qvalidatedlineedit.cpp
@@ -15581,7 +15581,7 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po
@@ -15631,7 +15631,7 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po
@@ -16208,7 +16208,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qrctoken.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po
@@ -16258,7 +16258,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrctoken.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po

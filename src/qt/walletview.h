@@ -22,7 +22,7 @@ class AddressBookPage;
 class CreateContract;
 class SendToContract;
 class CallContract;
-class QRCToken;
+class MRCToken;
 
 QT_BEGIN_NAMESPACE
 class QModelIndex;
@@ -71,7 +71,7 @@ private:
     CreateContract* createContractPage;
     SendToContract* sendToContractPage;
     CallContract* callContractPage;
-    QRCToken* QRCTokenPage;
+    MRCToken* MRCTokenPage;
 
     TransactionView *transactionView;
 

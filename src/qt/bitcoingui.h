@@ -128,7 +128,7 @@ private:
     QAction* createContractAction;
     QAction* sendToContractAction;
     QAction* callContractAction;
-    QAction* QRCTokenAction;
+    QAction* MRCTokenAction;
     QAction* sendTokenAction;
     QAction* receiveTokenAction;
     QAction* addTokenAction;

@@ -42,12 +42,12 @@ public Q_SLOTS:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& stake,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance, const CAmount& watchOnlyStake);
 
-//    void checkForInvalidTokens();
+    void checkForInvalidTokens();
 
 Q_SIGNALS:
     void showMoreClicked();
     void outOfSyncWarningClicked();
-//    void addTokenClicked();
+    void addTokenClicked();
 
 private:
     Ui::OverviewPage *ui;
@@ -71,7 +71,7 @@ private Q_SLOTS:
     void updateAlerts(const QString &warnings);
     void updateWatchOnlyLabels(bool showWatchOnly);
     void handleOutOfSyncWarningClicks();
-//    void on_buttonAddToken_clicked();
+    void on_buttonAddToken_clicked();
     void on_showMoreButton_clicked();
     void showDetails();
 };
