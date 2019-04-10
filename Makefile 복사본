@@ -331,7 +331,7 @@ CRYPTO_LIBS = -L/usr/local/Cellar/openssl/1.0.2r/lib -lcrypto
 CXX = g++ -std=c++11
 CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -std=c++11 -stdlib=libc++
+CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wthread-safety-analysis -Wno-unused-parameter -Wno-self-assign -Wno-unused-local-typedef -Wno-deprecated-register -Wno-implicit-fallthrough -Wno-unknown-pragmas
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -400,7 +400,7 @@ NMEDIT = nmedit
 OBJCOPY = /usr/local/bin/objcopy
 OBJCXX = g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
-OBJCXXFLAGS = -std=c++11 -stdlib=libc++
+OBJCXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wthread-safety-analysis -Wno-unused-parameter -Wno-self-assign -Wno-unused-local-typedef -Wno-deprecated-register -Wno-implicit-fallthrough -Wno-unknown-pragmas
 OBJDUMP = objdump
 OBJEXT = o
 OTOOL = otool

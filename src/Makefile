@@ -116,8 +116,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin18.2.0
-host_triplet = x86_64-apple-darwin18.2.0
+build_triplet = x86_64-apple-darwin18.5.0
+host_triplet = x86_64-apple-darwin18.5.0
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 noinst_PROGRAMS = $(am__EXEEXT_7)
@@ -2132,6 +2132,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_macnotificationhandler.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_merciversionchecker.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_modaloverlay.Po \
+	qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_navigationbar.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_notificator.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_openuridialog.Po \
@@ -2140,7 +2141,6 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po \
-	qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po \
@@ -2176,6 +2176,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_walletmodel.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-moc_walletview.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-modaloverlay.Po \
+	qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-navigationbar.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-networkstyle.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-notificator.Po \
@@ -2190,7 +2191,6 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po \
-	qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po \
 	qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po \
@@ -2704,7 +2704,7 @@ am__relativize = \
 ACLOCAL = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/ar
+AR = /usr/local/bin/ar
 ARFLAGS = cr
 AUTOCONF = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing autoheader
@@ -2719,12 +2719,12 @@ BITCOIN_GUI_NAME = merci-qt
 BITCOIN_TX_NAME = merci-tx
 BOOST_CHRONO_LIB = -lboost_chrono-mt
 BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/local/include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt
+BOOST_FILESYSTEM_LIB = -lboost_filesystem
 BOOST_LDFLAGS = -L/usr/local/lib
-BOOST_LIBS = -L/usr/local/lib -lboost_system-mt -lboost_filesystem-mt -lboost_program_options-mt -lboost_thread-mt -lboost_chrono-mt -lboost_random-mt
+BOOST_LIBS = -L/usr/local/lib -lboost_system -lboost_filesystem -lboost_program_options-mt -lboost_thread-mt -lboost_chrono-mt -lboost_random-mt
 BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt
 BOOST_RANDOM_LIB = -lboost_random-mt
-BOOST_SYSTEM_LIB = -lboost_system-mt
+BOOST_SYSTEM_LIB = -lboost_system
 BOOST_THREAD_LIB = -lboost_thread-mt
 BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt
 BREW = brew
@@ -2742,20 +2742,20 @@ COPYRIGHT_HOLDERS_FINAL = The Merci Core developers
 COPYRIGHT_HOLDERS_SUBSTITUTION = Merci Core
 COPYRIGHT_YEAR = 2018
 CPP = gcc -E
-CPPFILT = /usr/bin/c++filt
+CPPFILT = /usr/local/bin/c++filt
 CPPFLAGS =  -DMERCI_BUILD -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/local/opt/berkeley-db@4/include -DMAC_OSX
 CRYPTOPP_CPPFLAGS =  -I$(srcdir)/cryptopp/include
 CRYPTOPP_TARGET_FLAGS = 
-CRYPTO_CFLAGS = -I/usr/local/Cellar/openssl/1.0.2p/include
-CRYPTO_LIBS = -L/usr/local/Cellar/openssl/1.0.2p/lib -lcrypto
+CRYPTO_CFLAGS = -I/usr/local/Cellar/openssl/1.0.2r/include
+CRYPTO_LIBS = -L/usr/local/Cellar/openssl/1.0.2r/lib -lcrypto
 CXX = g++ -std=c++11
 CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wthread-safety-analysis -Wno-unused-parameter -Wno-self-assign -Wno-unused-local-typedef -Wno-deprecated-register -Wno-implicit-fallthrough -Wno-unknown-pragmas
+CXXFLAGS = -std=c++11 -stdlib=libc++
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = false
+DLLTOOL = dlltool
 DSYMUTIL = dsymutil
 DUMPBIN = 
 ECHO_C = \c
@@ -2802,10 +2802,10 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
 LIPO = lipo
 LN_S = ln -s
-LRELEASE = /usr/local/Cellar/qt/5.11.2/bin/lrelease
+LRELEASE = /usr/local/Cellar/qt/5.12.2/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = /usr/local/Cellar/qt/5.11.2/bin/lupdate
+LUPDATE = /usr/local/Cellar/qt/5.12.2/bin/lupdate
 MAINT = 
 MAKEINFO = ${SHELL} /Users/jeongwoo/git/merci/build-aux/missing makeinfo
 MAKENSIS = 
@@ -2813,14 +2813,14 @@ MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = ../build-aux/install-sh -c -d
-MOC = /usr/local/Cellar/qt/5.11.2/bin/moc
+MOC = /usr/local/Cellar/qt/5.12.2/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir) -DQ_OS_MAC
-NM = /usr/bin/nm -B
+NM = /usr/local/bin/nm -B
 NMEDIT = nmedit
-OBJCOPY = 
+OBJCOPY = /usr/local/bin/objcopy
 OBJCXX = g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
-OBJCXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wthread-safety-analysis -Wno-unused-parameter -Wno-self-assign -Wno-unused-local-typedef -Wno-deprecated-register -Wno-implicit-fallthrough -Wno-unknown-pragmas
+OBJCXXFLAGS = -std=c++11 -stdlib=libc++
 OBJDUMP = objdump
 OBJEXT = o
 OTOOL = otool
@@ -2839,8 +2839,8 @@ PKG_CONFIG = /usr/local/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = /usr/local/opt/qt/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:
 PORT = 
-PROTOBUF_CFLAGS = -pthread -I/usr/local/Cellar/protobuf/3.6.1/include
-PROTOBUF_LIBS = -L/usr/local/Cellar/protobuf/3.6.1/lib -lprotobuf -pthread
+PROTOBUF_CFLAGS = -pthread -I/usr/local/Cellar/protobuf/3.7.1/include
+PROTOBUF_LIBS = -L/usr/local/Cellar/protobuf/3.7.1/lib -lprotobuf -pthread
 PROTOC = /usr/local/bin/protoc
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
@@ -2851,41 +2851,41 @@ QR_CFLAGS = -I/usr/local/Cellar/qrencode/4.0.2/include
 QR_LIBS = -L/usr/local/Cellar/qrencode/4.0.2/lib -lqrencode
 QT4_CFLAGS = 
 QT4_LIBS = 
-QT5_CFLAGS = -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtNetwork -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtWidgets -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtGui -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
-QT5_LIBS = -F/usr/local/Cellar/qt/5.11.2/lib -framework QtNetwork -F/usr/local/Cellar/qt/5.11.2/lib -framework QtWidgets -F/usr/local/Cellar/qt/5.11.2/lib -framework QtGui -F/usr/local/Cellar/qt/5.11.2/lib -framework QtCore
+QT5_CFLAGS = -DQT_NETWORK_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_WIDGETS_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_GUI_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtNetwork.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtWidgets.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtGui.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
+QT5_LIBS = -F/usr/local/Cellar/qt/5.12.2/lib -framework QtNetwork -F/usr/local/Cellar/qt/5.12.2/lib -framework QtWidgets -F/usr/local/Cellar/qt/5.12.2/lib -framework QtGui -F/usr/local/Cellar/qt/5.12.2/lib -framework QtCore
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
 QTPRINT_LIBS = 
 QTXCBQPA_CFLAGS = 
 QTXCBQPA_LIBS = 
-QT_DBUS_CFLAGS = -DQT_DBUS_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtDBus -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
-QT_DBUS_INCLUDES = -DQT_DBUS_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtDBus -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
-QT_DBUS_LIBS = -F/usr/local/Cellar/qt/5.11.2/lib -framework QtDBus -F/usr/local/Cellar/qt/5.11.2/lib -framework QtCore
-QT_INCLUDES = -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtNetwork -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtWidgets -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtGui -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
+QT_DBUS_CFLAGS = -DQT_DBUS_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtDBus.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
+QT_DBUS_INCLUDES = -DQT_DBUS_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtDBus.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
+QT_DBUS_LIBS = -F/usr/local/Cellar/qt/5.12.2/lib -framework QtDBus -F/usr/local/Cellar/qt/5.12.2/lib -framework QtCore
+QT_INCLUDES = -DQT_NETWORK_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_WIDGETS_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_GUI_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtNetwork.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtWidgets.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtGui.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
 QT_LDFLAGS = 
-QT_LIBS = -F/usr/local/Cellar/qt/5.11.2/lib -framework QtNetwork -F/usr/local/Cellar/qt/5.11.2/lib -framework QtWidgets -F/usr/local/Cellar/qt/5.11.2/lib -framework QtGui -F/usr/local/Cellar/qt/5.11.2/lib -framework QtCore -framework Foundation -framework ApplicationServices -framework AppKit
+QT_LIBS = -F/usr/local/Cellar/qt/5.12.2/lib -framework QtNetwork -F/usr/local/Cellar/qt/5.12.2/lib -framework QtWidgets -F/usr/local/Cellar/qt/5.12.2/lib -framework QtGui -F/usr/local/Cellar/qt/5.12.2/lib -framework QtCore -framework Foundation -framework ApplicationServices -framework AppKit
 QT_PIE_FLAGS = -fPIE
 QT_SELECT = qt5
-QT_TEST_CFLAGS = -DQT_TESTLIB_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtTest -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
-QT_TEST_INCLUDES = -DQT_TESTLIB_LIB -DQT_CORE_LIB -I/usr/local/Cellar/qt/5.11.2/include/QtTest -I/usr/local/Cellar/qt/5.11.2/include -I/usr/local/Cellar/qt/5.11.2/include/QtCore -I/usr/local/Cellar/qt/5.11.2/include
-QT_TEST_LIBS = -F/usr/local/Cellar/qt/5.11.2/lib -framework QtTest -F/usr/local/Cellar/qt/5.11.2/lib -framework QtCore
+QT_TEST_CFLAGS = -DQT_TESTLIB_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtTest.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
+QT_TEST_INCLUDES = -DQT_TESTLIB_LIB -F/usr/local/Cellar/qt/5.12.2/lib -DQT_CORE_LIB -F/usr/local/Cellar/qt/5.12.2/lib -I/usr/local/Cellar/qt/5.12.2/lib/QtTest.framework/Headers -I/usr/local/Cellar/qt/5.12.2/lib/QtCore.framework/Headers
+QT_TEST_LIBS = -F/usr/local/Cellar/qt/5.12.2/lib -framework QtTest -F/usr/local/Cellar/qt/5.12.2/lib -framework QtCore
 QT_TRANSLATION_DIR = 
-RANLIB = /usr/bin/ranlib
-RCC = /usr/local/Cellar/qt/5.11.2/bin/rcc
-READELF = 
+RANLIB = /usr/local/bin/ranlib
+RCC = /usr/local/Cellar/qt/5.12.2/bin/rcc
+READELF = /usr/local/bin/readelf
 RELDFLAGS = 
 RSVG_CONVERT = /usr/local/bin/rsvg-convert
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/sh
 SSE42_CXXFLAGS = -msse4.2
-SSL_CFLAGS = -I/usr/local/Cellar/openssl/1.0.2p/include
-SSL_LIBS = -L/usr/local/Cellar/openssl/1.0.2p/lib -lssl
-STRIP = /usr/bin/strip
+SSL_CFLAGS = -I/usr/local/Cellar/openssl/1.0.2r/include
+SSL_LIBS = -L/usr/local/Cellar/openssl/1.0.2r/lib -lssl
+STRIP = /usr/local/bin/strip
 TESTDEFS =  -DBOOST_TEST_DYN_LINK
 TIFFCP = 
-UIC = /usr/local/Cellar/qt/5.11.2/bin/uic
+UIC = /usr/local/Cellar/qt/5.12.2/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
@@ -2914,10 +2914,10 @@ am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
 ax_pthread_config = 
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin18.2.0
+build = x86_64-apple-darwin18.5.0
 build_alias = 
 build_cpu = x86_64
-build_os = darwin18.2.0
+build_os = darwin18.5.0
 build_vendor = apple
 builddir = .
 datadir = ${datarootdir}
@@ -2925,10 +2925,10 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin18.2.0
+host = x86_64-apple-darwin18.5.0
 host_alias = 
 host_cpu = x86_64
-host_os = darwin18.2.0
+host_os = darwin18.5.0
 host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
@@ -6472,6 +6472,7 @@ include qt/$(DEPDIR)/libbitcoinqt_a-moc_macdockiconhandler.Po # am--include-mark
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_macnotificationhandler.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_merciversionchecker.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_modaloverlay.Po # am--include-marker
+include qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_navigationbar.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_notificator.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_openuridialog.Po # am--include-marker
@@ -6480,7 +6481,6 @@ include qt/$(DEPDIR)/libbitcoinqt_a-moc_optionsmodel.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po # am--include-marker
-include qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po # am--include-marker
@@ -6516,6 +6516,7 @@ include qt/$(DEPDIR)/libbitcoinqt_a-moc_walletframe.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_walletmodel.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-moc_walletview.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-modaloverlay.Po # am--include-marker
+include qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-navigationbar.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-networkstyle.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-notificator.Po # am--include-marker
@@ -6530,7 +6531,6 @@ include qt/$(DEPDIR)/libbitcoinqt_a-peertablemodel.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po # am--include-marker
-include qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po # am--include-marker
 include qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po # am--include-marker
@@ -15573,6 +15573,7 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_macnotificationhandler.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_merciversionchecker.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_modaloverlay.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_navigationbar.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_notificator.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_openuridialog.Po
@@ -15581,7 +15582,6 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po
@@ -15617,6 +15617,7 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_walletmodel.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_walletview.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-modaloverlay.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-navigationbar.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-networkstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-notificator.Po
@@ -15631,7 +15632,6 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po
@@ -16200,6 +16200,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_macnotificationhandler.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_merciversionchecker.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_modaloverlay.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_navigationbar.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_notificator.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_openuridialog.Po
@@ -16208,7 +16209,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_overviewpage.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_paymentserver.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_peertablemodel.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_qvaluecombobox.Po
@@ -16244,6 +16244,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_walletmodel.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-moc_walletview.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-modaloverlay.Po
+	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-navigationbar.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-networkstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-notificator.Po
@@ -16258,7 +16259,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-platformstyle.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qrc_bitcoin_locale.Po
-	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-mrctoken.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedlineedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvalidatedtextedit.Po
 	-rm -f qt/$(DEPDIR)/libbitcoinqt_a-qvaluecombobox.Po

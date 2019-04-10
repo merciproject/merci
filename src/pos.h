@@ -1,8 +1,8 @@
 // Copyright (c) 2012-2013 The PPCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef QUANTUM_POS_H
-#define QUANTUM_POS_H
+#ifndef MERCI_POS_H
+#define MERCI_POS_H
 
 #include <chain.h>
 #include <primitives/transaction.h>
@@ -49,4 +49,4 @@ bool CheckCoinStakeTimestamp(uint32_t nTimeBlock);
 bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBlock, const COutPoint& prevout, CCoinsViewCache& view);
 bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBlock, const COutPoint& prevout, CCoinsViewCache& view, const std::map<COutPoint, CStakeCache>& cache);
 
-#endif // QUANTUM_POS_H
+#endif // MERCI_POS_H

@@ -97,7 +97,7 @@ static const char Pad64 = '=';
          16 Q            33 h            50 y
 
    Special processing is performed if fewer than 24 bits are available
-   at the end of the data being encoded.  A full encoding quantum is
+   at the end of the data being encoded.  A full encoding merci is
    always completed at the end of a quantity.  When fewer than 24 input
    bits are available in an input group, zero bits are added (on the
    right) to form an integral number of 6-bit groups.  Padding at the
@@ -107,14 +107,14 @@ static const char Pad64 = '=';
          -------------------------------------------------
    following cases can arise:
 
-       (1) the final quantum of encoding input is an integral
+       (1) the final merci of encoding input is an integral
            multiple of 24 bits; here, the final unit of encoded
 	   output will be an integral multiple of 4 characters
 	   with no "=" padding,
-       (2) the final quantum of encoding input is exactly 8 bits;
+       (2) the final merci of encoding input is exactly 8 bits;
            here, the final unit of encoded output will be two
 	   characters followed by two "=" padding characters, or
-       (3) the final quantum of encoding input is exactly 16 bits;
+       (3) the final merci of encoding input is exactly 16 bits;
            here, the final unit of encoded output will be three
 	   characters followed by one "=" padding character.
 */
