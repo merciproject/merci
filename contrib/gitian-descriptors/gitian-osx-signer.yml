@@ -1,7 +1,7 @@
 ---
 name: "merci-dmg-signer"
 suites:
-- "bionic"
+- "trusty"
 architectures:
 - "amd64"
 packages:
