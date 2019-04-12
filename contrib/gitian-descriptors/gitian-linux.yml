@@ -1,5 +1,5 @@
 ---
-name: "merci-linux-0.16"
+name: "merci-linux-0.16.1"
 enable_cache: true
 suites:
 - "trusty"

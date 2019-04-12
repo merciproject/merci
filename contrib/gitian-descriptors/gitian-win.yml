@@ -1,5 +1,5 @@
 ---
-name: "merci-win-0.16"
+name: "merci-win-0.16.1"
 enable_cache: true
 suites:
 - "bionic"
