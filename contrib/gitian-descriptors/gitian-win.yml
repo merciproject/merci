@@ -1,5 +1,5 @@
 ---
-name: "merci-win-0.16.1"
+name: "merci-win-0.16"
 enable_cache: true
 suites:
 - "xenial"
