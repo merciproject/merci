@@ -1,5 +1,5 @@
 ---
-name: "merci-linux-0.17"
+name: "merci-linux-0.16"
 enable_cache: true
 suites:
 - "bionic"
